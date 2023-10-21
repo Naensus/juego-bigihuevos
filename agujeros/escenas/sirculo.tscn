@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://6qjge0pld1r0"]
+
+[ext_resource type="Texture2D" uid="uid://e6as5lvet210" path="res://sirculo.png" id="1_jrge4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c84dl"]
+radius = 69.0652
+
+[node name="Sirculo" type="Area2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 196.0
+offset_bottom = 202.0
+texture = ExtResource("1_jrge4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(99, 100)
+shape = SubResource("CircleShape2D_c84dl")

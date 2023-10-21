@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdw6ovs16g6ov"]
+
+[ext_resource type="Texture2D" uid="uid://dvfcmm1a7ppgb" path="res://goal.png" id="1_oi7pp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d8wo7"]
+radius = 69.0652
+
+[node name="goal" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 196.0
+offset_bottom = 202.0
+texture = ExtResource("1_oi7pp")
+
+[node name="Area2D" type="Area2D" parent="TextureRect"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Area2D"]
+position = Vector2(99, 100)
+shape = SubResource("CircleShape2D_d8wo7")
