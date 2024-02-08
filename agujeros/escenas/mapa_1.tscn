@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6k54kd5udu65"]
+[gd_scene load_steps=6 format=3 uid="uid://b6k54kd5udu65"]
 
 [ext_resource type="Texture2D" uid="uid://csyng5tbi4sit" path="res://fondo.png" id="1_rrulv"]
 [ext_resource type="PackedScene" uid="uid://6qjge0pld1r0" path="res://escenas/sirculo.tscn" id="2_jrwsv"]
 [ext_resource type="PackedScene" uid="uid://cdw6ovs16g6ov" path="res://escenas/goal.tscn" id="3_630i0"]
-[ext_resource type="PackedScene" uid="uid://d0x4lj8ocrpjf" path="res://escenas/serdi.tscn" id="4_xxjr5"]
+[ext_resource type="PackedScene" uid="uid://d0x4lj8ocrpjf" path="res://escenas/serdito.tscn" id="4_xxjr5"]
+[ext_resource type="PackedScene" uid="uid://jf7vhtkue4p5" path="res://escenas/conjunto.tscn" id="5_gdauw"]
 
 [node name="Mapa1" type="Node2D"]
 
@@ -12,25 +13,28 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_rrulv")
 
+[node name="serdito" parent="." instance=ExtResource("4_xxjr5")]
+position = Vector2(295, 49)
+
 [node name="Sirculo" parent="." instance=ExtResource("2_jrwsv")]
-position = Vector2(109, 119)
+position = Vector2(133, 147)
 scale = Vector2(0.6, 0.6)
 
 [node name="Sirculo2" parent="." instance=ExtResource("2_jrwsv")]
-position = Vector2(364, 103)
+position = Vector2(509, 184)
 scale = Vector2(0.225, 0.225)
 
 [node name="Sirculo3" parent="." instance=ExtResource("2_jrwsv")]
-position = Vector2(172, 216)
+position = Vector2(275, 384)
 scale = Vector2(1.465, 1.465)
 
 [node name="Sirculo4" parent="." instance=ExtResource("2_jrwsv")]
-position = Vector2(469, 175)
+position = Vector2(658, 223)
 
 [node name="goal" parent="." instance=ExtResource("3_630i0")]
 position = Vector2(607, 296)
 
-[node name="serdito" parent="." instance=ExtResource("4_xxjr5")]
-position = Vector2(165, 38)
+[node name="conjunto" parent="." instance=ExtResource("5_gdauw")]
+position = Vector2(405, 248)
 
 [connection signal="body_entered" from="Sirculo" to="serdito" method="_on_sirculo_body_entered"]

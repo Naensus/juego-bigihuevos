@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddxybqycwdanu"]
+
+[ext_resource type="Script" path="res://escenas/controller.gd" id="1_moxri"]
+
+[sub_resource type="Gradient" id="Gradient_qia64"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ukqje"]
+gradient = SubResource("Gradient_qia64")
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yeepa"]
+radius = 31.0
+
+[node name="controller" type="CharacterBody2D"]
+script = ExtResource("1_moxri")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_ukqje")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yeepa")
