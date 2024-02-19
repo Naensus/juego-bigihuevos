@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhcjkmosojvsd"]
+
+[ext_resource type="Texture2D" uid="uid://suxoase2wf3i" path="res://icon barra.png" id="1_4kh5r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpivl"]
+size = Vector2(1169, 10)
+
+[node name="Barra" type="RigidBody2D"]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kpivl")
+
+[node name="IconBarra" type="Sprite2D" parent="."]
+position = Vector2(-2.00008, -0.75)
+scale = Vector2(18.0625, 0.101563)
+texture = ExtResource("1_4kh5r")

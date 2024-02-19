@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://jf7vhtkue4p5"]
+
+[ext_resource type="PackedScene" uid="uid://ddxybqycwdanu" path="res://escenas/controller.tscn" id="1_vb4ch"]
+[ext_resource type="PackedScene" uid="uid://dhcjkmosojvsd" path="res://escenas/barra.tscn" id="2_gchly"]
+
+[node name="conjunto" type="Node2D"]
+
+[node name="Barra" parent="." instance=ExtResource("2_gchly")]
+disable_mode = 2
+
+[node name="PinJointDcha" type="PinJoint2D" parent="."]
+position = Vector2(550, 0)
+node_a = NodePath("../controllerDch")
+node_b = NodePath("../Barra")
+
+[node name="PinJointIzq" type="PinJoint2D" parent="."]
+position = Vector2(-550, 0)
+node_a = NodePath("../controllerIzq")
+node_b = NodePath("../Barra")
+
+[node name="controllerDch" parent="." instance=ExtResource("1_vb4ch")]
+position = Vector2(550, 0)
+motion_mode = 1
+left_right = 1
+
+[node name="controllerIzq" parent="." instance=ExtResource("1_vb4ch")]
+position = Vector2(-550, 0)
+motion_mode = 1

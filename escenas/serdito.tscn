@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0x4lj8ocrpjf"]
+
+[ext_resource type="Script" path="res://escenas/serdi.gd" id="1_io16x"]
+[ext_resource type="Texture2D" uid="uid://dj8j0s2pv6hqx" path="res://serditp.png" id="1_lylok"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eqjl4"]
+friction = 0.6
+bounce = 0.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c4oy3"]
+radius = 71.1458
+
+[node name="serdito" type="RigidBody2D" groups=["Player"]]
+collision_mask = 14
+physics_material_override = SubResource("PhysicsMaterial_eqjl4")
+gravity_scale = 1.1
+continuous_cd = 1
+max_contacts_reported = 15
+contact_monitor = true
+script = ExtResource("1_io16x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("1_lylok")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.45, 0.45)
+shape = SubResource("CircleShape2D_c4oy3")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

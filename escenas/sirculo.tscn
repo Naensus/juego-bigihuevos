@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://6qjge0pld1r0"]
+
+[ext_resource type="Texture2D" uid="uid://e6as5lvet210" path="res://sirculo.png" id="1_jrge4"]
+[ext_resource type="Script" path="res://escenas/sirculo.gd" id="1_mtkcj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vaeef"]
+radius = 48.0
+height = 156.0
+
+[node name="Sirculo" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_mtkcj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -100.0
+offset_top = -134.0
+offset_right = 96.0
+offset_bottom = 68.0
+texture = ExtResource("1_jrge4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CapsuleShape2D_vaeef")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
